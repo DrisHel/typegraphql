@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { ApolloServer } from 'apollo-server';
 import { buildSchemaSync } from 'type-graphql';
-import { UserResolvers } from './graphql/UserResolver';
+import { UserResolvers } from './graphql/users/UserResolver';
 
 
 const schema = buildSchemaSync({
