@@ -1,10 +1,7 @@
 import { Arg, ID, Mutation, Query, Resolver } from "type-graphql";
-import { createUser, getAllUser, updateUser , deleteUser} from "../../services/user/user";
+import { createUser, getAllUser, updateUser , deleteUser} from "../../../src/services/user/user";
 import { CreateUserInput, UpdateUserInput } from "./UserImput";
 import { UserOutput } from "./UserOutput";
-
-
-
 @Resolver()
 export class UserResolvers{
 @Query(() => String)
