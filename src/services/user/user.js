@@ -11,6 +11,7 @@ const createUser = async (data) => {
 const getAllUser = async () =>{
   const result =  await models.user.findAll()
     return result;
+    
 }
 
 
