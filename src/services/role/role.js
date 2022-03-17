@@ -6,11 +6,18 @@ const createRole = async (data) => {
     )
     return true;
 }
-
 const getAllRole = async () =>{
     const result =  await models.role.findAll()
-      return result;
+    return result;
   }
+const updateRole = async (data) =>{
+    await models.role.update(data, { where : { id:data.id }})
+    return true;
+}
+
+const deleteRole = async (id) => {
+    return await models.role.destroy({where:{id}}) 
+}
 
 
-module.exports = {createRole , getAllRole}
+module.exports = {createRole , getAllRole, updateRole,deleteRole }

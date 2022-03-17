@@ -3,14 +3,12 @@ const {Sequelize } = require("sequelize");
 const User = require("./user");
 const Role = require("./role")
 
-
-
-
 const sequelize = new Sequelize(config);
 const user = User(sequelize);
 const role = Role(sequelize);
 
-
-module.exports = {
+const models = {
     user, role
 }
+user.associate(models)
+module.exports = models;

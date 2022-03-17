@@ -4,12 +4,23 @@ const models = require("../../models");
 const createUser = async (data) => {
     await models.user.create(
         data,
+        {
+            include:{
+                model:models.role,
+                as:'roles'
+            }
+        }
     )
     return true;
 }
 
 const getAllUser = async () =>{
-  const result =  await models.user.findAll()
+  const result =  await models.user.findAll({
+    include:{
+        model:models.role,
+        as:'roles'
+    }
+});
     return result;
     
 }

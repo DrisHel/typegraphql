@@ -1,4 +1,4 @@
-const { DataTypes } = require("sequelize")
+const { DataTypes, Association } = require("sequelize")
 
 module.exports = (sequelize) => {
 const User = sequelize.define('User', {
@@ -12,5 +12,12 @@ const User = sequelize.define('User', {
     name:DataTypes.STRING,
     email:DataTypes.STRING
 },{tableName:"user",timestamps:false})
+User.associate = function(models){
+    User.hasMany(models.role,{
+       as:'roles',
+       foreignKey:'user_id'
+    
+      });
+}
 return User;
 }

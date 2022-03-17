@@ -7,7 +7,7 @@ export class RoleOutput{
     })
     name: string
 
-    @Field({
+    @Field(()=>Boolean,{
         description:"Situação da função"
     })
     active: boolean

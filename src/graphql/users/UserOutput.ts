@@ -1,4 +1,5 @@
 import { Field, ID, ObjectType } from "type-graphql";
+import { RoleOutput } from "../roles/RoleOutput";
 
 @ObjectType({description:"Lista todos os usuários:"})
 export class UserOutput{
@@ -17,4 +18,9 @@ export class UserOutput{
     })
     id:number
    
+    @Field(()=>[RoleOutput],{
+        description: "Cargos do usuário."
+    })
+    roles:Array<RoleOutput>
+
 }

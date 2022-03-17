@@ -1,4 +1,5 @@
 import { Field, ID,InputType } from "type-graphql";
+import { CreateRoleInput } from "../roles/RoleInput";
 
 
 @InputType()
@@ -8,6 +9,9 @@ export class CreateUserInput {
 
     @Field()
     email: String
+
+    @Field(() => [CreateRoleInput])
+    roles:Array<CreateRoleInput>
 }
 
 @InputType()
